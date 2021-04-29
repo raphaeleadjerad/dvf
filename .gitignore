@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+venv
+eggs/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Pycharm
+.idea
+
+# VS Code
+.vscode/
+
+# Jupyter NB Checkpoints
+.ipynb_checkpoints/
+
+# exclude data from source control by default
+/data/*
+!*/data/raw/*.md
+!*/data/interim/*.md
+!*/data/clean/*.md
+!*/data/output/*.md
+
+# Mac OS-specific storage files
+.DS_Store
+
+# vim
+*.swp
+*.swo
