@@ -128,33 +128,6 @@ def create_table(table_name: str, sql_query: str, dbname: str = "dvf", path_to_s
     print(f"{} créée dans la base PostgreSQL {}".format(table_name, dbname))
 
 
-
-def count_lines_table(table_name: str, dbname: str = "dvf", path_to_secret_yml: str = "../secrets.yml") -> None:
-    """
-    Function to count lines in a specific table in a db
-    """
-    conn = open_connection(dbname=dbname, secrets=path_to_secret_yml)
-
-    cur = conn.cursor()
-
-    if table_name in check_db(cur=cur):
-        print(f"{table_name} bien présente dans la base PostgreSQL {dbname}")
-
-    sql = """
-     SELECT 
-       COUNT(*) 
-    FROM 
-    {};
-    """.format(table_name)
-    cur.execute(
-       sql
-    )
-    print(cur.fetchall())
-    cur.close()
-    conn.close()
-
-
-
 # 
 def copy_from_file(conn, path2file, table):
     """
